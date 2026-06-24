@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aroma Edge — Final Project Report | Digital Marketing | Superior University</title>
+<meta name="description" content="Final Project Report for Aroma Edge — A student-led online perfume startup brand, submitted for the Digital Marketing course at Superior University, Lahore.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     AROMA EDGE — PREMIUM REPORT DESIGN SYSTEM
+     Color Palette: Champagne Gold, Deep Ebony, Pearl White, Rosé
+  ============================================================ */
+
+  :root {
+    --gold-deep:     #8B6914;
+    --gold-mid:      #C9A84C;
+    --gold-light:    #E8C97E;
+    --gold-pale:     #F5E6C0;
+    --gold-shimmer:  #FAF0D7;
+    --ebony:         #1A1209;
+    --ebony-mid:     #2C1E08;
+    --ebony-light:   #4A3520;
+    --pearl:         #FDFAF4;
+    --pearl-mid:     #F7F1E6;
+    --rose:          #B87566;
+    --rose-light:    #D4A090;
+    --charcoal:      #3A3230;
+    --text-dark:     #1E1710;
+    --text-body:     #2E2418;
+    --text-light:    #6B5740;
+    --text-muted:    #9C8068;
+    --divider:       #D4B878;
+    --border-light:  #EDD89A;
+    --page-bg:       #FDFAF4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 10pt; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #E8DCC8;
+    color: var(--text-body);
+    line-height: 1.7;
+  }
+
+  /* ── PAGE CONTAINER ─────────────────────────────────────── */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    background: var(--page-bg);
+    margin: 10mm auto;
+    box-shadow: 0 8px 40px rgba(26,18,9,0.25);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── RUNNING HEADER & FOOTER ────────────────────────────── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6mm 16mm 4mm;
+    border-bottom: 0.3mm solid var(--divider);
+    background: var(--pearl-mid);
+  }
+  .page-header .brand-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+  }
+  .page-header .institution-tag {
+    font-size: 7pt;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4mm 16mm;
+    border-top: 0.3mm solid var(--border-light);
+    background: var(--pearl-mid);
+  }
+  .page-footer .footer-text {
+    font-size: 7pt;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+  .page-footer .page-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--gold-deep);
+  }
+
+  .page-body {
+    padding: 5mm 12mm 8mm;
+  }
+
+  /* ── DECORATIVE ELEMENTS ────────────────────────────────── */
+  .gold-rule {
+    border: none;
+    border-top: 0.5mm solid;
+    border-image: linear-gradient(to right, transparent, var(--gold-mid), transparent) 1;
+    margin: 5mm 0;
+  }
+  .gold-rule-double {
+    border: none;
+    height: 3mm;
+    background: linear-gradient(to right, transparent, var(--gold-mid), transparent);
+    margin: 6mm 0;
+    position: relative;
+  }
+  .gold-rule-double::after {
+    content: '';
+    position: absolute;
+    bottom: -2mm;
+    left: 0; right: 0;
+    height: 0.3mm;
+    background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+  }
+
+  .section-ornament {
+    display: flex;
+    align-items: center;
+    gap: 4mm;
+    margin-bottom: 5mm;
+  }
+  .section-ornament::before,
+  .section-ornament::after {
+    content: '';
+    flex: 1;
+    height: 0.3mm;
+    background: linear-gradient(to right, transparent, var(--gold-mid));
+  }
+  .section-ornament::after {
+    background: linear-gradient(to left, transparent, var(--gold-mid));
+  }
+  .ornament-diamond {
+    width: 5mm; height: 5mm;
+    background: var(--gold-mid);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ── TYPOGRAPHY ─────────────────────────────────────────── */
+  h1.report-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32pt;
+    font-weight: 300;
+    color: var(--ebony);
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+  }
+  h1.report-title span {
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+
+  h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--ebony);
+    letter-spacing: 0.04em;
+    margin-bottom: 2mm;
+    padding-bottom: 1mm;
+    border-bottom: 0.5mm solid var(--gold-light);
+    display: flex;
+    align-items: baseline;
+    gap: 2mm;
+  }
+  h2.section-title .section-num {
+    font-size: 11pt;
+    font-weight: 400;
+    color: var(--gold-deep);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  h3.subsection-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--ebony-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 2.5mm 0 1.5mm;
+    padding-left: 3mm;
+    border-left: 1.2mm solid var(--gold-mid);
+  }
+
+  h4.minor-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.04em;
+    margin: 4mm 0 2mm;
+  }
+
+  p {
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: var(--text-body);
+    margin-bottom: 2mm;
+    text-align: justify;
+  }
+
+  ul, ol {
+    margin: 1mm 0 2mm 5mm;
+  }
+  li {
+    font-size: 8.5pt;
+    line-height: 1.4;
+    color: var(--text-body);
+    margin-bottom: 0.8mm;
+  }
+  li::marker {
+    color: var(--gold-deep);
+  }
+
+  strong { color: var(--text-dark); }
+
+  /* ── TABLES ─────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2mm 0 3mm;
+    font-size: 8pt;
+  }
+  thead tr {
+    background: linear-gradient(135deg, var(--ebony-mid), var(--ebony-light));
+    color: var(--gold-light);
+  }
+  thead th {
+    padding: 3mm 4mm;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 0.3mm solid var(--ebony);
+  }
+  tbody tr:nth-child(even) { background: var(--pearl-mid); }
+  tbody tr:nth-child(odd)  { background: var(--page-bg); }
+  tbody tr:hover { background: var(--gold-shimmer); }
+  tbody td {
+    padding: 1mm 2mm;
+    border: 0.2mm solid var(--border-light);
+    vertical-align: top;
+    line-height: 1.35;
+  }
+  .calendar-table tbody td {
+    padding: 1.1mm 2mm;
+    line-height: 1.35;
+  }
+  tbody td:first-child {
+    font-weight: 600;
+    color: var(--ebony-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── INFO CARDS ─────────────────────────────────────────── */
+  .info-card {
+    background: linear-gradient(135deg, var(--pearl-mid), var(--gold-shimmer));
+    border: 0.3mm solid var(--gold-light);
+    border-left: 2mm solid var(--gold-mid);
+    border-radius: 1mm;
+    padding: 3mm 4mm;
+    margin: 2mm 0;
+  }
+  .info-card p { margin: 0; font-size: 9pt; }
+  .info-card strong { color: var(--gold-deep); }
+
+  /* ── HIGHLIGHT BOX ──────────────────────────────────────── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--ebony-mid) 0%, #3D2812 100%);
+    color: var(--gold-light);
+    border-radius: 2mm;
+    padding: 3mm 5mm;
+    margin: 2mm 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-box strong,
+  .youtube-card strong {
+    color: var(--gold-light) !important;
+  }
+  .highlight-box::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 30mm; height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(201,168,76,0.08));
+  }
+  .highlight-box h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 2mm;
+  }
+  .highlight-box p {
+    color: rgba(245,230,192,0.9);
+    font-size: 9pt;
+    margin: 0;
+  }
+  .highlight-box ul { color: rgba(245,230,192,0.9); }
+  .highlight-box li { font-size: 9pt; color: rgba(245,230,192,0.9); }
+  .highlight-box li::marker { color: var(--gold-mid); }
+
+  /* ── SWOT GRID ──────────────────────────────────────────── */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm;
+    margin: 4mm 0;
+  }
+  .swot-cell {
+    border-radius: 1.5mm;
+    padding: 4mm;
+    font-size: 8.5pt;
+  }
+  .swot-cell h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .swot-cell ul { margin-left: 4mm; }
+  .swot-cell li { font-size: 8pt; margin-bottom: 1mm; }
+  .swot-s { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border: 0.3mm solid #4CAF50; }
+  .swot-s h5 { color: #1B5E20; }
+  .swot-s li::marker { color: #388E3C; }
+  .swot-w { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); border: 0.3mm solid #FF9800; }
+  .swot-w h5 { color: #E65100; }
+  .swot-w li::marker { color: #F57C00; }
+  .swot-o { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); border: 0.3mm solid #2196F3; }
+  .swot-o h5 { color: #0D47A1; }
+  .swot-o li::marker { color: #1976D2; }
+  .swot-t { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); border: 0.3mm solid #E91E63; }
+  .swot-t h5 { color: #880E4F; }
+  .swot-t li::marker { color: #C2185B; }
+
+  /* ── DIAGRAM PLACEHOLDER ─────────────────────────────────── */
+  .diagram-placeholder {
+    border: 0.5mm dashed var(--gold-mid);
+    border-radius: 2mm;
+    padding: 8mm;
+    margin: 4mm 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--pearl-mid), var(--gold-shimmer));
+    min-height: 40mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3mm;
+  }
+  .diagram-placeholder .diagram-icon {
+    font-size: 22pt;
+    opacity: 0.5;
+  }
+  .diagram-placeholder .diagram-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .diagram-placeholder .diagram-desc {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    max-width: 100mm;
+    line-height: 1.5;
+  }
+
+  /* ── SCREENSHOT PLACEHOLDER ──────────────────────────────── */
+  .screenshot-placeholder {
+    border: 0.4mm solid var(--border-light);
+    border-radius: 2mm;
+    background: linear-gradient(135deg, #F0EBE0, var(--pearl-mid));
+    margin: 2mm 0;
+    overflow: hidden;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .screenshot-placeholder img {
+    width: 100%;
+    height: 30mm;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-bottom-left-radius: 1.5mm;
+    border-bottom-right-radius: 1.5mm;
+  }
+  .screenshot-placeholder.full-size img {
+    height: 52mm;
+  }
+  .screenshot-toolbar {
+    background: var(--ebony-mid);
+    padding: 2mm 4mm;
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+  }
+  .dot { width: 3mm; height: 3mm; border-radius: 50%; }
+  .dot-red   { background: #FF5F57; }
+  .dot-yellow{ background: #FFBD2E; }
+  .dot-green { background: #28CA41; }
+  .screenshot-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2mm;
+    padding: 5mm;
+    min-height: 40mm;
+  }
+  .screenshot-body .ss-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .screenshot-caption {
+    text-align: center;
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1mm;
+  }
+
+  /* ── FEATURE GRID ───────────────────────────────────────── */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3mm;
+    margin: 4mm 0;
+  }
+  .feature-card {
+    background: var(--pearl-mid);
+    border: 0.3mm solid var(--border-light);
+    border-top: 2mm solid var(--gold-mid);
+    border-radius: 1.5mm;
+    padding: 4mm;
+    text-align: center;
+  }
+  .feature-card .f-icon { font-size: 16pt; margin-bottom: 2mm; }
+  .feature-card .f-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--ebony-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .feature-card p { font-size: 7.5pt; text-align: center; color: var(--text-light); margin: 0; }
+
+  /* ── METRIC CARDS ───────────────────────────────────────── */
+  .metric-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3mm;
+    margin: 4mm 0;
+  }
+  .metric-card {
+    background: linear-gradient(135deg, var(--ebony-mid), var(--ebony-light));
+    border-radius: 2mm;
+    padding: 4mm;
+    text-align: center;
+    color: var(--gold-light);
+  }
+  .metric-card .m-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18pt;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1mm;
+  }
+  .metric-card .m-label {
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245,230,192,0.75);
+  }
+
+  /* ── KPI TABLE ──────────────────────────────────────────── */
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0;
+  }
+  .kpi-table th {
+    background: linear-gradient(135deg, var(--ebony-mid), var(--ebony-light));
+    color: var(--gold-light);
+    padding: 3mm 4mm;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 0.2mm solid var(--ebony);
+    text-align: left;
+  }
+  .kpi-table td {
+    padding: 2.5mm 4mm;
+    border: 0.2mm solid var(--border-light);
+    font-size: 8.5pt;
+    vertical-align: middle;
+  }
+  .kpi-table tr:nth-child(even) { background: var(--pearl-mid); }
+  .badge {
+    display: inline-block;
+    padding: 0.5mm 2.5mm;
+    border-radius: 1mm;
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .badge-green  { background: #C8E6C9; color: #1B5E20; }
+  .badge-amber  { background: #FFE0B2; color: #E65100; }
+  .badge-blue   { background: #BBDEFB; color: #0D47A1; }
+  .badge-rose   { background: #F8BBD0; color: #880E4F; }
+
+  /* ── TIMELINE ───────────────────────────────────────────── */
+  .timeline {
+    position: relative;
+    padding-left: 12mm;
+    margin: 4mm 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5mm;
+    top: 2mm; bottom: 2mm;
+    width: 0.5mm;
+    background: linear-gradient(to bottom, var(--gold-mid), var(--gold-light));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 5mm;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9mm;
+    top: 1.5mm;
+    width: 3.5mm; height: 3.5mm;
+    border-radius: 50%;
+    background: var(--gold-mid);
+    border: 0.5mm solid var(--gold-deep);
+  }
+  .timeline-item .t-phase {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: var(--gold-deep);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .timeline-item p { font-size: 8.5pt; margin: 1mm 0 0; }
+
+  /* ── COVER PAGE ─────────────────────────────────────────── */
+  .cover-page {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    background: var(--ebony);
+    margin: 10mm auto;
+    box-shadow: 0 8px 40px rgba(26,18,9,0.4);
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Decorative background pattern */
+  .cover-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(201,168,76,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(139,105,20,0.06) 0%, transparent 60%);
+  }
+
+  .cover-corner {
+    position: absolute;
+    width: 40mm; height: 40mm;
+    border-color: rgba(201,168,76,0.3);
+  }
+  .cover-corner.tl { top: 8mm; left: 8mm; border-top: 0.5mm solid; border-left: 0.5mm solid; }
+  .cover-corner.tr { top: 8mm; right: 8mm; border-top: 0.5mm solid; border-right: 0.5mm solid; }
+  .cover-corner.bl { bottom: 8mm; left: 8mm; border-bottom: 0.5mm solid; border-left: 0.5mm solid; }
+  .cover-corner.br { bottom: 8mm; right: 8mm; border-bottom: 0.5mm solid; border-right: 0.5mm solid; }
+
+  .cover-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 12mm;
+    width: 100%;
+  }
+
+  .cover-institution {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+
+  .cover-institute-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--pearl);
+    letter-spacing: 0.05em;
+    margin-bottom: 8mm;
+  }
+
+  .cover-divider-top {
+    width: 60mm;
+    height: 0.3mm;
+    background: linear-gradient(to right, transparent, var(--gold-mid), transparent);
+    margin: 0 auto 5mm;
+  }
+
+  .cover-logo-area {
+    margin: 4mm auto;
+    width: 25mm; height: 25mm;
+    border-radius: 50%;
+    border: 1mm solid var(--gold-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(201,168,76,0.1), transparent);
+    font-size: 26pt;
+  }
+
+  .cover-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38pt;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.15em;
+    line-height: 1;
+    margin: 4mm 0 1mm;
+  }
+
+  .cover-brand-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 300;
+    letter-spacing: 0.45em;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+
+  .cover-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: rgba(245,230,192,0.7);
+    margin-bottom: 5mm;
+  }
+
+  .cover-report-label {
+    display: inline-block;
+    border: 0.3mm solid rgba(201,168,76,0.5);
+    padding: 2mm 8mm;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 5mm;
+  }
+
+  .cover-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5mm;
+    align-items: center;
+  }
+  .cover-meta-row {
+    display: flex;
+    gap: 6mm;
+    align-items: center;
+  }
+  .cover-meta-item {
+    text-align: center;
+  }
+  .cover-meta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(201,168,76,0.6);
+    text-transform: uppercase;
+    display: block;
+  }
+  .cover-meta-value {
+    font-size: 8.5pt;
+    color: rgba(253,250,244,0.85);
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10pt;
+  }
+  .cover-dot {
+    color: rgba(201,168,76,0.4);
+    font-size: 14pt;
+  }
+
+  .cover-bottom-band {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 12mm;
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cover-bottom-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: rgba(253,250,244,0.9);
+    text-transform: uppercase;
+  }
+
+  /* ── CERTIFICATE PAGE ───────────────────────────────────── */
+  .cert-border {
+    border: 1mm solid var(--gold-mid);
+    margin: 8mm;
+    padding: 10mm 15mm;
+    position: relative;
+    min-height: 255mm;
+  }
+  .cert-border::before {
+    content: '';
+    position: absolute;
+    inset: 3mm;
+    border: 0.3mm solid rgba(201,168,76,0.4);
+  }
+  .cert-corner-ornament {
+    position: absolute;
+    width: 10mm; height: 10mm;
+    border-color: var(--gold-mid);
+  }
+  .cert-corner-ornament.tl { top: -1mm; left: -1mm; border-top: 2mm solid; border-left: 2mm solid; background: var(--page-bg); }
+  .cert-corner-ornament.tr { top: -1mm; right: -1mm; border-top: 2mm solid; border-right: 2mm solid; background: var(--page-bg); }
+  .cert-corner-ornament.bl { bottom: -1mm; left: -1mm; border-bottom: 2mm solid; border-left: 2mm solid; background: var(--page-bg); }
+  .cert-corner-ornament.br { bottom: -1mm; right: -1mm; border-bottom: 2mm solid; border-right: 2mm solid; background: var(--page-bg); }
+
+  .cert-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24pt;
+    font-weight: 600;
+    color: var(--gold-deep);
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 2mm;
+  }
+
+  .cert-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8mm;
+  }
+
+  .cert-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    color: var(--text-body);
+    line-height: 2;
+    text-align: center;
+  }
+
+  .cert-body .highlight {
+    font-weight: 600;
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+
+  .sig-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15mm;
+  }
+  .sig-block {
+    text-align: center;
+    min-width: 45mm;
+  }
+  .sig-line {
+    width: 45mm;
+    height: 0.3mm;
+    background: var(--divider);
+    margin: 0 auto 1.5mm;
+  }
+  .sig-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 0.06em;
+  }
+  .sig-role {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+  }
+
+  /* ── TABLE OF CONTENTS ──────────────────────────────────── */
+  .toc-entry {
+    display: flex;
+    align-items: baseline;
+    padding: 1.5mm 0;
+    border-bottom: 0.2mm dotted var(--border-light);
+  }
+  .toc-entry:last-child { border-bottom: none; }
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--gold-deep);
+    min-width: 10mm;
+  }
+  .toc-title {
+    flex: 1;
+    font-size: 9pt;
+    color: var(--text-body);
+    padding: 0 2mm;
+  }
+  .toc-dots {
+    flex: 1;
+    border-bottom: 0.3mm dotted var(--divider);
+    margin: 0 2mm 0.8mm;
+    min-width: 10mm;
+  }
+  .toc-page {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--gold-deep);
+    min-width: 6mm;
+    text-align: right;
+  }
+  .toc-sub {
+    padding-left: 8mm;
+  }
+  .toc-sub .toc-num { font-size: 8.5pt; color: var(--text-muted); }
+  .toc-sub .toc-title { font-size: 8.5pt; color: var(--text-light); }
+  .toc-sub .toc-page { font-size: 8.5pt; color: var(--text-muted); }
+  .toc-section-gap { height: 2mm; }
+
+  /* ── PRINT STYLES ───────────────────────────────────────── */
+  @media print {
+    body { background: white; }
+    .page, .cover-page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════════════════════ -->
+<div class="cover-page">
+  <div class="cover-bg-pattern"></div>
+  <div class="cover-corner tl"></div>
+  <div class="cover-corner tr"></div>
+  <div class="cover-corner bl"></div>
+  <div class="cover-corner br"></div>
+
+  <div class="cover-inner">
+    <div class="cover-institution">Superior University, Lahore</div>
+    <div class="cover-institute-name">Department of Computing &amp; Information Technology</div>
+    <div class="cover-divider-top"></div>
+
+    <div class="cover-logo-area">🌸</div>
+
+    <div class="cover-brand">AROMA EDGE</div>
+    <div class="cover-brand-sub">Fragrance • Identity • Elegance</div>
+    <div class="cover-tagline">"Where Scent Meets Style"</div>
+
+    <div class="cover-report-label">Final Project Report — Digital Marketing</div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-row">
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Course</span>
+          <span class="cover-meta-value">Digital Marketing</span>
+        </div>
+        <span class="cover-dot">◆</span>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Supervisor</span>
+          <span class="cover-meta-value">Raja Shahzaib</span>
+        </div>
+        <span class="cover-dot">◆</span>
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Academic Year</span>
+          <span class="cover-meta-value">2025 – 2026</span>
+        </div>
+      </div>
+      <div style="height:5mm;"></div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Programme</span>
+          <span class="cover-meta-value">BS Software Engineering — Batch F25</span>
+        </div>
+      </div>
+      <div style="height:4mm;"></div>
+      <div class="cover-meta-row">
+        <div class="cover-meta-item">
+          <span class="cover-meta-label">Team Members</span>
+          <span class="cover-meta-value">Muhammad Haseeb &nbsp;·&nbsp; Muhammad Asim &nbsp;·&nbsp; Ali Hassan &nbsp;·&nbsp; Ghulam Abbas &nbsp;·&nbsp; Ali Raza</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom-band">
+    <span class="cover-bottom-text">Submitted in Partial Fulfilment of the Digital Marketing Course Requirements</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     GROUP MEMBERS INFORMATION
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">2.</span> Group Members Information</h2>
+
+    <div class="section-ornament" style="margin:4mm 0 6mm;">
+      <div class="ornament-diamond"></div>
+    </div>
+
+    <p style="margin-bottom:6mm; text-align:center;">
+      This project report has been compiled and submitted by the following student members of 
+      <strong>BS Software Engineering — Batch F25 (Section BSSE-2A)</strong> at Superior University, Lahore.
+    </p>
+
+    <div class="highlight-box" style="margin-bottom:6mm; padding:4mm 6mm;">
+      <h4 style="text-align:center; margin-bottom:1mm;">Course Instructor &amp; Project Supervisor</h4>
+      <p style="text-align:center; font-size:10.5pt; font-weight:600; color:var(--gold-light);">Raja Shahzaib</p>
+      <p style="text-align:center; font-size:8pt; color:rgba(245,230,192,0.85); margin:0;">Lecturer, Department of Software Engineering</p>
+    </div>
+
+    <table style="margin-top:4mm;">
+      <thead>
+        <tr>
+          <th>Roll Number</th>
+          <th>Name</th>
+          <th>Program &amp; Section</th>
+          <th>Project Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SU92-BSSEM-F25-001</td>
+          <td>Muhammad Haseeb</td>
+          <td>BSSE — 2A</td>
+          <td><span class="badge badge-green">Team Lead</span> Brand &amp; Digital Strategist</td>
+        </tr>
+        <tr>
+          <td>SU92-BSSEM-F25-054</td>
+          <td>Muhammad Asim</td>
+          <td>BSSE — 2A</td>
+          <td><span class="badge badge-blue">Content Planner</span> Social Media Ops</td>
+        </tr>
+        <tr>
+          <td>SU92-BSSEM-F25-288</td>
+          <td>Ali Hassan</td>
+          <td>BSSE — 2A</td>
+          <td><span class="badge badge-amber">Web Developer</span> Tech Integration</td>
+        </tr>
+        <tr>
+          <td>SU92-BSSEM-F25-008</td>
+          <td>Ghulam Abbas</td>
+          <td>BSSE — 2A</td>
+          <td><span class="badge badge-rose">Ad Specialist</span> Meta Campaigns Lead</td>
+        </tr>
+        <tr>
+          <td>SU92-BSSEM-F25-016</td>
+          <td>Ali Raza</td>
+          <td>BSSE — 2A</td>
+          <td><span class="badge badge-blue">Video Producer</span> Lead Content Creator</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-card" style="margin-top:6mm;">
+      <p style="font-size:8.5pt; line-height:1.65; margin:0;">
+        <strong>Collaboration Summary:</strong> The team worked collaboratively to conceptualize the 
+        Aroma Edge brand, define its D2C marketing strategy, and execute the digital campaigns. 
+        Each member took ownership of their respective areas—ranging from brand positioning and copywriting 
+        to web development, paid ad management, video editing, and campaign analytics monitoring.
+      </p>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">ii</span>
+  </div>
+</div>
+<!-- ══════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">✦</span> Table of Contents</h2>
+
+    <div class="toc-entry"><span class="toc-num">1.</span><span class="toc-title">Cover Page</span><span class="toc-dots"></span><span class="toc-page">1</span></div>
+    <div class="toc-entry"><span class="toc-num">2.</span><span class="toc-title">Group Members Information</span><span class="toc-dots"></span><span class="toc-page">ii</span></div>
+    <div class="toc-entry"><span class="toc-num">3.</span><span class="toc-title">Table of Contents</span><span class="toc-dots"></span><span class="toc-page">iii</span></div>
+    <div class="toc-section-gap"></div>
+
+    <div class="toc-entry"><span class="toc-num">4.</span><span class="toc-title">Executive Summary</span><span class="toc-dots"></span><span class="toc-page">4</span></div>
+    <div class="toc-entry"><span class="toc-num">5.</span><span class="toc-title">Business Introduction</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">5.1</span><span class="toc-title">Brand Overview</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">5.2</span><span class="toc-title">Business Concept &amp; Value Proposition</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">5.3</span><span class="toc-title">Products &amp; Services</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">5.4</span><span class="toc-title">Mission, Vision &amp; Goals</span><span class="toc-dots"></span><span class="toc-page">5</span></div>
+    <div class="toc-entry"><span class="toc-num">6.</span><span class="toc-title">Market Analysis</span><span class="toc-dots"></span><span class="toc-page">6</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">6.1</span><span class="toc-title">Industry Overview</span><span class="toc-dots"></span><span class="toc-page">6</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">6.2</span><span class="toc-title">Target Audience &amp; Segmentation</span><span class="toc-dots"></span><span class="toc-page">6</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">6.3</span><span class="toc-title">SWOT Analysis</span><span class="toc-dots"></span><span class="toc-page">6</span></div>
+    <div class="toc-entry"><span class="toc-num">7.</span><span class="toc-title">Competitor Analysis</span><span class="toc-dots"></span><span class="toc-page">7</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">7.1</span><span class="toc-title">Competitive Landscape Overview</span><span class="toc-dots"></span><span class="toc-page">7</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">7.2</span><span class="toc-title">Competitive Advantage</span><span class="toc-dots"></span><span class="toc-page">7</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">7.3</span><span class="toc-title">Market Positioning Map</span><span class="toc-dots"></span><span class="toc-page">7</span></div>
+    <div class="toc-entry"><span class="toc-num">8.</span><span class="toc-title">Social Media Strategy</span><span class="toc-dots"></span><span class="toc-page">8</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">8.1</span><span class="toc-title">Strategic Objectives</span><span class="toc-dots"></span><span class="toc-page">8</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">8.2</span><span class="toc-title">Platform Strategy</span><span class="toc-dots"></span><span class="toc-page">8</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">8.3</span><span class="toc-title">Brand Identity &amp; Visual Guidelines</span><span class="toc-dots"></span><span class="toc-page">8</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">8.4</span><span class="toc-title">Business Profile Layouts</span><span class="toc-dots"></span><span class="toc-page">8</span></div>
+    <div class="toc-entry"><span class="toc-num">9.</span><span class="toc-title">Content Planning</span><span class="toc-dots"></span><span class="toc-page">9</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">9.1</span><span class="toc-title">Content Pillars</span><span class="toc-dots"></span><span class="toc-page">9</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">9.2</span><span class="toc-title">Two-Week Content Calendar</span><span class="toc-dots"></span><span class="toc-page">9</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">9.3</span><span class="toc-title">Hashtag Strategy</span><span class="toc-dots"></span><span class="toc-page">9</span></div>
+      <div class="toc-entry toc-sub"><span class="toc-num">9.4</span><span class="toc-title">Content Execution &amp; Grid View</span><span class="toc-dots"></span><span class="toc-page">9</span></div>
+    <div class="toc-entry"><span class="toc-num">10.</span><span class="toc-title">Meta Ads Campaign</span><span class="toc-dots"></span><span class="toc-page">10</span></div>
+    <div class="toc-entry"><span class="toc-num">11.</span><span class="toc-title">Video Advertisement Strategy</span><span class="toc-dots"></span><span class="toc-page">11</span></div>
+    <div class="toc-entry"><span class="toc-num">12.</span><span class="toc-title">Analytics &amp; KPIs</span><span class="toc-dots"></span><span class="toc-page">12</span></div>
+    <div class="toc-entry"><span class="toc-num">13.</span><span class="toc-title">LinkedIn Branding</span><span class="toc-dots"></span><span class="toc-page">13</span></div>
+    <div class="toc-entry"><span class="toc-num">14.</span><span class="toc-title">YouTube Marketing</span><span class="toc-dots"></span><span class="toc-page">14</span></div>
+    <div class="toc-entry"><span class="toc-num">15.</span><span class="toc-title">Findings &amp; Recommendations</span><span class="toc-dots"></span><span class="toc-page">15</span></div>
+    <div class="toc-entry"><span class="toc-num">16.</span><span class="toc-title">Conclusion</span><span class="toc-dots"></span><span class="toc-page">16</span></div>
+    <div class="toc-entry"><span class="toc-num">17.</span><span class="toc-title">References</span><span class="toc-dots"></span><span class="toc-page">17</span></div>
+    <div class="toc-entry"><span class="toc-num">18.</span><span class="toc-title">Appendix (Screenshots &amp; Links)</span><span class="toc-dots"></span><span class="toc-page">18</span></div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">iii</span>
+  </div>
+</div>
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 2 — EXECUTIVE SUMMARY
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">4.</span> Executive Summary</h2>
+
+    <p>
+      Aroma Edge is a student-launched online perfume startup established to provide affordable,
+      portable, and stylish mini fragrances for Pakistan's youth market — specifically targeting school,
+      college, and university students aged 16–28. The brand was conceptualised and executed as part of
+      the Digital Marketing course at Superior University, Lahore, during the academic year 2025–2026.
+    </p>
+
+    <p>
+      The project's core philosophy is straightforward: make premium fragrance accessible to every student
+      who wants to smell great without spending beyond their budget. By launching with a single, focused
+      product — a 10ml–15ml pocket perfume spray — Aroma Edge demonstrates the viability of a
+      niche-first digital launch strategy that prioritises brand depth over product breadth.
+    </p>
+
+    <h3 class="subsection-title">Key Highlights</h3>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-icon">🌸</div>
+        <div class="f-title">Brand Launched</div>
+        <p>Full brand identity created including logo, palette, tagline &amp; social profiles</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">📱</div>
+        <div class="f-title">Multi-Platform</div>
+        <p>Active presence on Instagram, Facebook, WhatsApp Business &amp; Website</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🎯</div>
+        <div class="f-title">Paid Campaign</div>
+        <p>Real Meta Ads campaign executed with targeted audience segmentation</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🎬</div>
+        <div class="f-title">Video Ad</div>
+        <p>Branded brand-launch video advertisement produced and published</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">📊</div>
+        <div class="f-title">Analytics</div>
+        <p>Full campaign analytics monitored across all platforms and reported</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🔗</div>
+        <div class="f-title">LinkedIn</div>
+        <p>Professional branding established for all team members on LinkedIn</p>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">Campaign Performance Overview</h3>
+
+    <div class="metric-row">
+      <div class="metric-card">
+        <div class="m-num">5.4K+</div>
+        <div class="m-label">Total Reach</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">4.5%</div>
+        <div class="m-label">Avg. Engagement</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">25+</div>
+        <div class="m-label">Followers Gained</div>
+      </div>
+      <div class="metric-card">
+        <div class="m-num">24+</div>
+        <div class="m-label">DM Inquiries</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <p><strong>Brand Name:</strong> Aroma Edge &nbsp;|&nbsp;
+      <strong>Tagline:</strong> "Where Scent Meets Style" &nbsp;|&nbsp;
+      <strong>Product:</strong> Mini Pocket Perfume (10ml–15ml) &nbsp;|&nbsp;
+      <strong>Target Market:</strong> Students &amp; Young Adults, Age 16–28, Pakistan</p>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">4</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 3 — BUSINESS INTRODUCTION
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">5.</span> Business Introduction</h2>
+
+    <h3 class="subsection-title">5.1 Brand Overview</h3>
+
+    <table>
+      <thead><tr><th>Attribute</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Brand Name</td><td>Aroma Edge</td></tr>
+        <tr><td>Brand Tagline</td><td>"Where Scent Meets Style"</td></tr>
+        <tr><td>Business Type</td><td>Online Perfume Startup — Direct-to-Consumer (D2C)</td></tr>
+        <tr><td>Product Category</td><td>Mini Pocket Perfume Spray (10ml – 15ml)</td></tr>
+        <tr><td>Target Market</td><td>Students &amp; Young Adults, Age 16–28, Male &amp; Female, Pakistan</td></tr>
+        <tr><td>Primary Platforms</td><td>Instagram, Facebook, WhatsApp Business, Business Website</td></tr>
+        <tr><td>Design Tool</td><td>Canva (Branding, Posts, Reels, Stories)</td></tr>
+        <tr><td>Year Established</td><td>2026 (Academic Project)</td></tr>
+        <tr><td>Location</td><td>Lahore, Pakistan (Nationwide Delivery Planned)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">5.2 Business Concept &amp; Value Proposition</h3>
+
+    <p>
+      Aroma Edge is built on a focused, student-first philosophy: fragrance should not be a luxury reserved
+      for those with a large disposable income. In Pakistan's student communities — from school corridors to
+      university campuses — there exists a persistent and underserved demand for quality fragrances that
+      are both affordable and convenient to carry throughout the day.
+    </p>
+
+    <p>
+      Traditional perfume bottles are bulky, expensive, and impractical for a student's bag or pocket. Aroma
+      Edge solves this with elegantly packaged 10ml–15ml spray bottles that deliver a genuine fragrance
+      experience in a format designed for student life. Every product is selected with a single question in
+      mind: <em>would a student feel proud to use this in class, in a café, or at a university event?</em>
+    </p>
+
+    <div class="highlight-box">
+      <h4>Core Value Proposition</h4>
+      <ul>
+        <li><strong>Affordable:</strong> Priced within the reach of students on a typical pocket money budget</li>
+        <li><strong>Portable:</strong> Compact 10–15ml bottles designed to fit in a pocket, pencil case, or handbag</li>
+        <li><strong>Stylish:</strong> Premium packaging and aesthetics that feel luxurious at accessible price points</li>
+        <li><strong>Long-lasting:</strong> Carefully selected fragrance formulations that maintain scent throughout a full school/university day</li>
+        <li><strong>Digital-first:</strong> Order via Instagram DM, WhatsApp, or website — no physical store visit needed</li>
+      </ul>
+    </div>
+
+    <h3 class="subsection-title">5.3 Products &amp; Services</h3>
+
+    <table>
+      <thead><tr><th>Product / Service</th><th>Description</th><th>Price Range (Est.)</th></tr></thead>
+      <tbody>
+        <tr><td>Pocket Perfume Spray (Launch Product)</td><td>10ml–15ml mini spray; unisex and gender-specific options; suitable for daily student use</td><td>PKR 350 – 650</td></tr>
+        <tr><td>Fragrance Gift Sets (Phase 2)</td><td>Curated sets of 2–3 mini perfumes; ideal for gifting occasions</td><td>PKR 900 – 1,500</td></tr>
+        <tr><td>Business Website</td><td>Product display, fragrance descriptions, online ordering, and contact form</td><td>Free / Low-cost hosting</td></tr>
+        <tr><td>Social Media Commerce</td><td>Orders via Instagram DM and WhatsApp Business; order tracking via WhatsApp</td><td>N/A (Channel)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">5.4 Mission, Vision &amp; Goals</h3>
+
+    <div class="info-card">
+      <p><strong>Mission:</strong> To provide affordable, stylish, and long-lasting mini perfumes for students and
+      young customers through digital platforms and our business website, making premium fragrance
+      accessible to every young individual in Pakistan.</p>
+    </div>
+    <div class="info-card">
+      <p><strong>Vision:</strong> To become a trusted and recognised youth fragrance startup in Pakistan — growing
+      from a single signature product to a full line of affordable luxury fragrances celebrated by
+      students and young professionals nationwide.</p>
+    </div>
+
+    <ul>
+      <li>Launch a focused online perfume startup with one core mini perfume product line</li>
+      <li>Create a business website for online product display, fragrance descriptions, and ordering</li>
+      <li>Build brand awareness among students via Instagram, Facebook, and WhatsApp Business</li>
+      <li>Generate initial sales and gather market feedback within the first two-week campaign window</li>
+      <li>Build customer trust through quality packaging, honest pricing, and responsive communication</li>
+      <li>Expand the fragrance catalogue into more variants after validating the initial market response</li>
+    </ul>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">5</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 4 — MARKET ANALYSIS
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">6.</span> Market Analysis</h2>
+
+    <h3 class="subsection-title">6.1 Industry Overview</h3>
+
+    <p>
+      Pakistan's personal care and fragrance market is experiencing sustained growth, driven by a young,
+      increasingly brand-aware population and the rapid expansion of mobile internet access across urban
+      centres. With over 80 million internet users and a smartphone penetration rate exceeding 40%, digital
+      commerce — particularly through social media platforms — has become the fastest-growing retail
+      channel for personal care products including perfumes and fragrances.
+    </p>
+
+    <p>
+      The global fragrance market is valued at over USD 52 billion (2024) and is projected to grow at a
+      CAGR of 5.5% through 2030, with emerging markets in South Asia, including Pakistan, contributing
+      significantly to this growth. Within Pakistan, the shift from formal department store purchases to
+      direct-to-consumer social commerce is particularly pronounced in the 16–28 age bracket — the exact
+      demographic that Aroma Edge targets.
+    </p>
+
+    <p>
+      Mini and travel-sized fragrances specifically represent a high-growth niche: they serve spontaneous
+      purchase behaviour, are less intimidating to first-time fragrance buyers, and align perfectly with
+      the social media unboxing and lifestyle content trends that drive discovery in younger audiences.
+    </p>
+
+    <h3 class="subsection-title">6.2 Target Audience &amp; Segmentation</h3>
+
+    <table>
+      <thead><tr><th>Segmentation Type</th><th>Criteria</th><th>Aroma Edge Target</th></tr></thead>
+      <tbody>
+        <tr><td>Demographic</td><td>Age Range</td><td>16 – 28 Years</td></tr>
+        <tr><td>Demographic</td><td>Gender</td><td>Male &amp; Female</td></tr>
+        <tr><td>Demographic</td><td>Occupation</td><td>School Students, College &amp; University Students, Young Professionals</td></tr>
+        <tr><td>Demographic</td><td>Income Level</td><td>Low-to-Middle Income (Pocket money to entry-level salary)</td></tr>
+        <tr><td>Geographic</td><td>Primary Cities</td><td>Lahore, Karachi, Islamabad, Faisalabad, Multan, Rawalpindi</td></tr>
+        <tr><td>Geographic</td><td>Delivery Scope</td><td>Nationwide via courier partners</td></tr>
+        <tr><td>Psychographic</td><td>Lifestyle Traits</td><td>Fashion-conscious, grooming-aware, socially active, trend-following</td></tr>
+        <tr><td>Psychographic</td><td>Values</td><td>Affordability, style, convenience, authenticity</td></tr>
+        <tr><td>Behavioural</td><td>Shopping Channel</td><td>Instagram DM, WhatsApp Business, Website</td></tr>
+        <tr><td>Behavioural</td><td>Buying Triggers</td><td>Promotions, influencer posts, peer recommendations, limited-time offers</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">6.3 SWOT Analysis</h3>
+
+    <div class="swot-grid">
+      <div class="swot-cell swot-s">
+        <h5>💪 Strengths</h5>
+        <ul>
+          <li>Unique niche — student-focused affordable fragrance</li>
+          <li>Low startup cost with a single focused product</li>
+          <li>Strong brand aesthetic and visual identity</li>
+          <li>Digital-native, zero physical overhead</li>
+          <li>Direct customer communication via DMs and WhatsApp</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-w">
+        <h5>⚠ Weaknesses</h5>
+        <ul>
+          <li>No track record or customer reviews at launch</li>
+          <li>Limited advertising budget</li>
+          <li>Single product line reduces purchase basket size</li>
+          <li>No dedicated e-commerce website at startup stage</li>
+          <li>Supply chain and packaging vendor not yet formalised</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-o">
+        <h5>🚀 Opportunities</h5>
+        <ul>
+          <li>Fast-growing Pakistani personal care e-commerce market</li>
+          <li>Rising demand for affordable travel-sized fragrances</li>
+          <li>Student influencer collaborations at minimal cost</li>
+          <li>Instagram &amp; WhatsApp Business integration for social commerce</li>
+          <li>Expansion into gift sets, seasonal collections, and unisex lines</li>
+        </ul>
+      </div>
+      <div class="swot-cell swot-t">
+        <h5>⚡ Threats</h5>
+        <ul>
+          <li>Established fragrance brands with larger budgets</li>
+          <li>High competition in the mini-perfume segment</li>
+          <li>Instagram &amp; Facebook algorithm changes reducing organic reach</li>
+          <li>Economic instability affecting student spending power</li>
+          <li>Risk of counterfeit products in the affordable fragrance space</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">6</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 5 — COMPETITOR ANALYSIS
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">7.</span> Competitor Analysis</h2>
+
+    <h3 class="subsection-title">7.1 Competitive Landscape Overview</h3>
+
+    <p>
+      Aroma Edge operates in the affordable fragrance segment of Pakistan's personal care market. The
+      competitive landscape includes both established international fragrance brands with Pakistani retail
+      presence, local perfume companies, and emerging social commerce fragrance sellers on Instagram.
+      Understanding competitor strengths and positioning gaps is critical to defining Aroma Edge's unique
+      competitive advantage.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Competitor</th>
+          <th>Price Range</th>
+          <th>Key Strengths</th>
+          <th>Where Aroma Edge Wins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>J. (J. Junaid Jamshed)</td>
+          <td>PKR 800–3,500</td>
+          <td>Trusted Pakistani brand, wide retail network, halal-certified fragrances</td>
+          <td>Lower price point, student-focused sizing, digital-only speed &amp; agility</td>
+        </tr>
+        <tr>
+          <td>Al-Haramain Perfumes</td>
+          <td>PKR 1,200–4,000</td>
+          <td>Premium Arabian fragrance quality, loyal customer base</td>
+          <td>More affordable entry point, youthful branding, pocket-size format</td>
+        </tr>
+        <tr>
+          <td>Fragrance Studio PK (Instagram sellers)</td>
+          <td>PKR 300–700</td>
+          <td>Low prices, social media presence</td>
+          <td>Stronger visual identity, more professional branding, community engagement</td>
+        </tr>
+        <tr>
+          <td>Body Shop (Mini formats)</td>
+          <td>PKR 1,500–3,000</td>
+          <td>Premium brand trust, wide product range</td>
+          <td>Significantly more affordable; targeted at student budgets</td>
+        </tr>
+        <tr>
+          <td>Local Campus Sellers</td>
+          <td>PKR 200–500</td>
+          <td>Physical proximity, cash transactions</td>
+          <td>Professional digital presence, quality assurance, brand trust, wider reach</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">7.2 Competitive Advantage</h3>
+
+    <p>
+      Aroma Edge's most powerful competitive advantage is its <strong>niche precision</strong>. Where established brands
+      try to serve every demographic, Aroma Edge has been built exclusively for students and young adults.
+      This laser focus allows every design decision, content piece, pricing choice, and platform strategy
+      to be optimised for a single, well-understood audience — creating a brand that students feel is made
+      specifically <em>for them</em>, not simply available <em>to them</em>.
+    </p>
+
+    <div class="highlight-box">
+      <h4>Aroma Edge's Unique Differentiators</h4>
+      <ul>
+        <li><strong>Student-First Pricing:</strong> Every product is priced within typical student pocket money ranges (PKR 350–650)</li>
+        <li><strong>Pocket-Ready Format:</strong> 10–15ml bottles designed for lockers, bags, and pockets — not bathroom shelves</li>
+        <li><strong>Zero Physical Overhead:</strong> 100% digital ordering = lower cost base = lower prices for customers</li>
+        <li><strong>Authentic Brand Voice:</strong> Content is created by students, for students — relatable, honest, and peer-driven</li>
+        <li><strong>Speed &amp; Responsiveness:</strong> Trend-identified today, content published tomorrow — a speed no established brand can match</li>
+      </ul>
+    </div>
+
+    <h3 class="subsection-title">7.3 Market Positioning Map</h3>
+
+    
+    <div style="background: linear-gradient(135deg, var(--pearl-mid), var(--gold-shimmer)); border: 0.3mm solid var(--gold-light); border-radius: 2mm; padding: 4mm; margin: 3mm 0;">
+      <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size: 8.5pt;">Figure 7.1 — Aroma Edge Market Positioning Matrix</h4>
+      <div style="position: relative; width: 100%; height: 50mm; border-left: 0.5mm solid var(--ebony-light); border-bottom: 0.5mm solid var(--ebony-light); margin: 4mm 0 6mm 6mm; background: rgba(255,255,255,0.4);">
+        <!-- Axis labels -->
+        <div style="position: absolute; bottom: -5mm; right: 0; font-size: 7.5pt; font-weight: 600; color: var(--text-light);">YOUTH / STUDENT FOCUS ──►</div>
+        <div style="position: absolute; top: 0; left: -8mm; font-size: 7.5pt; font-weight: 600; color: var(--text-light); transform: translateY(-50%) rotate(-90deg); transform-origin: center; top: 50%; left: -6mm;">◄── PRICE LEVEL</div>
+        <!-- Grid sectors -->
+        <div style="position: absolute; top: 10%; left: 10%; font-size: 6.5pt; color: var(--text-muted); opacity: 0.6;">High Price / General Audience</div>
+        <div style="position: absolute; bottom: 10%; left: 10%; font-size: 6.5pt; color: var(--text-muted); opacity: 0.6;">Low Price / General Audience</div>
+        <!-- Competitor Points -->
+        <div style="position: absolute; top: 20%; left: 30%; background: #FF5F57; color: white; padding: 0.5mm 2mm; border-radius: 1mm; font-size: 7pt; font-weight: 600;">J. Perfumes</div>
+        <div style="position: absolute; top: 15%; left: 15%; background: #FF5F57; color: white; padding: 0.5mm 2mm; border-radius: 1mm; font-size: 7pt; font-weight: 600;">Al-Haramain</div>
+        <div style="position: absolute; bottom: 25%; left: 20%; background: #FFBD2E; color: var(--text-dark); padding: 0.5mm 2mm; border-radius: 1mm; font-size: 7pt; font-weight: 600;">Fragrance Studio</div>
+        <div style="position: absolute; top: 30%; left: 45%; background: #FF5F57; color: white; padding: 0.5mm 2mm; border-radius: 1mm; font-size: 7pt; font-weight: 600;">Body Shop (Mini)</div>
+        <!-- Aroma Edge Point (Highlight) -->
+        <div style="position: absolute; bottom: 35%; right: 15%; background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid)); color: white; padding: 1mm 3mm; border-radius: 1.5mm; font-size: 8.5pt; font-weight: 700; border: 0.3mm solid var(--ebony); box-shadow: 0 4px 10px rgba(139,105,20,0.4); z-index: 10; animation: pulse 2s infinite;">AROMA EDGE 🌸</div>
+      </div>
+      <p style="font-size: 7.5pt; color: var(--text-muted); text-align: center; margin: 0;">
+        <strong>Strategic Quadrant:</strong> Aroma Edge successfully occupies the high-demand, high-frequency segment by providing 
+        maximum student target focus at an accessible pricing model (PKR 350-650).
+      </p>
+    </div>
+        
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">7</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 6 — SOCIAL MEDIA STRATEGY
+══════════════════════════════════════════════════════════ --><div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">8.</span> Social Media Strategy</h2>
+
+    <h3 class="subsection-title">8.1 Strategic Objectives</h3>
+
+    <ul>
+      <li>Build brand awareness and recognition for Aroma Edge among Pakistan's 16–28 student demographic</li>
+      <li>Establish a distinctive, premium-yet-accessible visual identity across all digital platforms</li>
+      <li>Generate consistent follower growth and audience engagement through creative, student-relevant content</li>
+      <li>Drive sales inquiries via Instagram DMs and WhatsApp Business</li>
+      <li>Execute at least one paid Meta Ads campaign to measure reach, engagement, and conversion rates</li>
+      <li>Build brand credibility through quality visuals, professional profiles, and responsive customer service</li>
+    </ul>
+
+    <h3 class="subsection-title">8.2 Platform Strategy</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Primary Purpose</th>
+          <th>Content Type</th>
+          <th>Posting Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Instagram</td>
+          <td>Brand discovery &amp; visual identity showcase</td>
+          <td>Reels, Grid Posts, Stories, Highlights, Close Friends</td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td>Facebook</td>
+          <td>Community building &amp; paid advertising reach</td>
+          <td>Posts, Reels, Stories, Polls, Event Announcements</td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td>WhatsApp Business</td>
+          <td>Order processing &amp; customer relationship management</td>
+          <td>Catalogue, Status Updates, Direct Messaging, Broadcast Lists</td>
+          <td>As needed</td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td>Product display, credibility &amp; ordering hub</td>
+          <td>Product Pages, Fragrance Descriptions, Contact Form, Blog</td>
+          <td>Weekly updates</td>
+        </tr>
+        <tr>
+          <td>YouTube</td>
+          <td>Long-form brand content &amp; video advertising</td>
+          <td>Brand Launch Ad, Fragrance Reviews, Behind-the-Scenes</td>
+          <td>Weekly</td>
+        </tr>
+        <tr>
+          <td>LinkedIn</td>
+          <td>Professional credibility &amp; team personal branding</td>
+          <td>Project updates, team achievements, industry insights</td>
+          <td>Bi-weekly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">8.3 Brand Identity &amp; Visual Guidelines</h3>
+
+    <p>
+      Aroma Edge's visual identity is built around a <strong>luxury minimalism</strong> aesthetic — champagne gold,
+      deep ebony, and pearl white as primary tones, evoking premium fragrance heritage while remaining
+      fresh and contemporary for a student audience. Typography combines a serif display font for brand
+      names and headlines with a clean sans-serif for body text and captions.
+    </p>
+
+    <table>
+      <thead><tr><th>Element</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Primary Colours</td><td>Champagne Gold (#C9A84C), Deep Ebony (#1A1209), Pearl White (#FDFAF4)</td></tr>
+        <tr><td>Accent Colour</td><td>Dusty Rose (#B87566) — used for feminine fragrance variants</td></tr>
+        <tr><td>Display Font</td><td>Cormorant Garamond (Serif) — Brand name, headlines</td></tr>
+        <tr><td>Body Font</td><td>Inter / Montserrat (Sans-serif) — Captions, descriptions, CTAs</td></tr>
+        <tr><td>Logo Style</td><td>Text-based with floral/perfume motif; gold on dark for dark backgrounds; dark on gold for light backgrounds</td></tr>
+        <tr><td>Photography Style</td><td>Flat lay on marble/dark surfaces; warm candlelight tones; macro close-ups of bottle details</td></tr>
+        <tr><td>Content Tone</td><td>Confident, aspirational, warm, relatable — luxury without arrogance</td></tr>
+      </tbody>
+    </table>
+    <h3 class="subsection-title">8.4 Business Profiles Setup</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 3mm;">
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Facebook Business Profile</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">facebook.com/AromaEdgePerfumes</span>
+          </div>
+          <img src="images/2.jpeg" alt="Facebook Profile" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Instagram Business Profile</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">instagram.com/aroma_edge</span>
+          </div>
+          <img src="images/4.jpeg" alt="Instagram Profile" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">8</span>
+  </div>
+</div>
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 7 — CONTENT PLANNING
+══════════════════════════════════════════════════════════ --><div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">9.</span> Content Planning</h2>
+
+    <h3 class="subsection-title">9.1 Content Pillars</h3>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-icon">🛍️</div>
+        <div class="f-title">Promotional (30%)</div>
+        <p>Product showcases, pricing reveals, limited-time offers, new fragrance drops</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">💬</div>
+        <div class="f-title">Engagement (25%)</div>
+        <p>Polls ("Which scent?"), Q&amp;A stickers, "This or That", giveaway announcements</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">📖</div>
+        <div class="f-title">Educational (20%)</div>
+        <p>Fragrance notes explained, how to apply perfume correctly, layering scents guide</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🎬</div>
+        <div class="f-title">Entertainment (15%)</div>
+        <p>Scent mood transitions, aesthetic Reels with trending audio, campus lifestyle content</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">⭐</div>
+        <div class="f-title">Social Proof (10%)</div>
+        <p>Customer testimonials, order highlights, unboxing reposts, review screenshots</p>
+      </div>
+      <div class="feature-card">
+        <div class="f-icon">🏆</div>
+        <div class="f-title">Brand Story</div>
+        <p>Behind-the-scenes, team content, brand values, mission-driven posts</p>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">9.2 Two-Week Content Calendar</h3>
+
+    <table class="calendar-table">
+      <thead>
+        <tr><th>Week</th><th>Day</th><th>Platform</th><th>Content Type</th><th>Topic / Content</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="7" style="font-weight:700; color:var(--gold-deep); vertical-align:middle;">Week 1</td><td>Monday</td><td>IG + FB</td><td>Reel</td><td>Brand Launch Announcement — Aroma Edge is Here!</td></tr>
+        <tr><td>Tuesday</td><td>Instagram</td><td>Grid Post</td><td>Hero Product Showcase — Signature Mini Perfume Reveal</td></tr>
+        <tr><td>Wednesday</td><td>Facebook</td><td>Educational Post</td><td>"How to Make Your Perfume Last All Day" — Tips Guide</td></tr>
+        <tr><td>Thursday</td><td>Instagram</td><td>Story Poll</td><td>"Which scent vibe are you? 🌸 Floral vs 🪵 Woody"</td></tr>
+        <tr><td>Friday</td><td>IG + FB</td><td>Promotional Post</td><td>Launch Week Offer — Free Delivery on First 50 Orders</td></tr>
+        <tr><td>Saturday</td><td>Instagram</td><td>Reel</td><td>Fragrance Aesthetic Video — "Your Pocket, Your Signature"</td></tr>
+        <tr><td>Sunday</td><td>Facebook</td><td>Engagement Post</td><td>"Tag a friend who deserves a fresh scent upgrade! 💛"</td></tr>
+        <tr><td rowspan="7" style="font-weight:700; color:var(--gold-deep); vertical-align:middle;">Week 2</td><td>Monday</td><td>IG + FB</td><td>Reel</td><td>Brand Video Advertisement — Full Version Goes Live</td></tr>
+        <tr><td>Tuesday</td><td>Instagram</td><td>Carousel</td><td>Top 5 Reasons to Switch to a Pocket Perfume — Aroma Edge Style</td></tr>
+        <tr><td>Wednesday</td><td>Facebook</td><td>Customer Post</td><td>First Order Spotlight — Real Customer, Real Reaction</td></tr>
+        <tr><td>Thursday</td><td>Instagram</td><td>Story Q&amp;A</td><td>"Ask Us About Your Perfect Scent Match!" — Interactive Q&amp;A</td></tr>
+        <tr><td>Friday</td><td>IG + FB</td><td>Promotional</td><td>Weekend Flash Sale — 3-Hour Offer: 15% Off All Orders</td></tr>
+        <tr><td>Saturday</td><td>Instagram</td><td>Reel</td><td>Behind the Scenes — How We Package Your Order with Love 💛</td></tr>
+        <tr><td>Sunday</td><td>All Platforms</td><td>Meta Ad Live</td><td>Paid Campaign Goes Live — Brand Awareness + Engagement Objective</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">9.3 Hashtag Strategy</h3>
+
+    <table>
+      <thead><tr><th>Hashtag Tier</th><th>Hashtags</th></tr></thead>
+      <tbody>
+        <tr><td>Brand Hashtags</td><td>#AromaEdge &nbsp;#AromaEdgePerfume &nbsp;#WhereScentMeetsStyle &nbsp;#AromaEdgePK</td></tr>
+        <tr><td>Niche Fragrance</td><td>#PocketPerfume &nbsp;#MiniPerfume &nbsp;#AffordablePerfume &nbsp;#StudentFragrance &nbsp;#PerfumePakistan</td></tr>
+        <tr><td>Youth &amp; Lifestyle</td><td>#StudentLife &nbsp;#UniversityPK &nbsp;#CampusStyle &nbsp;#PakistaniStudents &nbsp;#YoungAndFresh</td></tr>
+        <tr><td>Trending / Discovery</td><td>#Fragrance &nbsp;#PerfumeCollection &nbsp;#ScentOfTheDay &nbsp;#PerfumeLover &nbsp;#OOTD</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">9.4 Content Execution &amp; Grid View</h3>
+    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4mm; margin-top: 3mm;">
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Meta Published Content Stream</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">business.facebook.com/content</span>
+          </div>
+          <img src="images/3.jpeg" alt="Meta Published Posts" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Instagram Post Grid (9-Grid)</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">instagram.com/aroma_edge</span>
+          </div>
+          <img src="images/5.jpeg" alt="Instagram Grid Feed" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">9</span>
+  </div>
+</div>
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 11 — META ADS CAMPAIGN
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">10.</span> Meta Ads Campaign</h2>
+
+    <h3 class="subsection-title">10.1 Campaign Overview</h3>
+
+    <p>
+      A real paid advertising campaign was executed through Meta Business Suite and Meta Ads Manager
+      to promote Aroma Edge across Facebook and Instagram. The campaign was designed to test two key
+      objectives simultaneously: <strong>Brand Awareness</strong> (maximising reach among the target demographic) and
+      <strong>Engagement</strong> (driving profile visits, post interactions, and DM inquiries).
+    </p>
+
+    <table>
+      <thead><tr><th>Campaign Parameter</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Campaign Objective</td><td>Awareness + Engagement (Split Test)</td></tr>
+        <tr><td>Campaign Name</td><td>Aroma Edge — Student Launch Campaign 2026</td></tr>
+        <tr><td>Campaign Duration</td><td>7 Days (Week 2 of Content Calendar)</td></tr>
+        <tr><td>Total Budget</td><td>PKR 1,500 (Daily Budget: PKR 250/day)</td></tr>
+        <tr><td>Ad Placements</td><td>Instagram Feed, Instagram Reels, Facebook Feed, Facebook Stories</td></tr>
+        <tr><td>Ad Format</td><td>Single Image Ad + Video Ad (Reel format)</td></tr>
+        <tr><td>Ad Creative</td><td>Branded product visual with tagline "Where Scent Meets Style" + CTA</td></tr>
+        <tr><td>Call to Action</td><td>"Send Message" → WhatsApp Business redirect</td></tr>
+        <tr><td>Billing</td><td>Meta Ads credit / Debit card — Campaign monitored daily</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">10.2 Audience Targeting Strategy</h3>
+
+    <table>
+      <thead><tr><th>Targeting Parameter</th><th>Setting</th></tr></thead>
+      <tbody>
+        <tr><td>Age Range</td><td>16 – 28 Years</td></tr>
+        <tr><td>Gender</td><td>All Genders</td></tr>
+        <tr><td>Locations</td><td>Lahore, Karachi, Islamabad, Faisalabad, Rawalpindi, Multan</td></tr>
+        <tr><td>Interests</td><td>Perfumes, Fragrances, Fashion, Beauty Products, Student Life, Online Shopping</td></tr>
+        <tr><td>Behaviours</td><td>Engaged Shoppers, Mobile Shoppers, Small Business Supporters</td></tr>
+        <tr><td>Custom Audience</td><td>Page Visitors + Instagram Profile Visitors (Retargeting — Week 2)</td></tr>
+        <tr><td>Lookalike Audience</td><td>Based on Instagram profile engagers (1% Lookalike — Pakistan)</td></tr>
+        <tr><td>Excluded Audience</td><td>Existing page followers (to maximise new audience reach)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">10.3 Ad Creative Examples</h3>
+
+
+    <div class="screenshot-placeholder full-size" style="min-height: auto; margin-top: 3mm;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">business.facebook.com/home</span>
+      </div>
+      <img src="images/7.jpeg" alt="Meta Business Suite Dashboard" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+    </div>
+    <div class="screenshot-caption" style="margin-bottom:2mm;">Figure 10.1 — Meta Business Suite Dashboard &amp; Campaigns Homepage</div>
+        
+
+    <h3 class="subsection-title">10.4 Campaign Results Summary</h3>
+
+    <table class="kpi-table">
+      <thead>
+        <tr><th>Metric</th><th>Result</th><th>Benchmark</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Total Reach</td><td>5,420</td><td>5,000+</td><td><span class="badge badge-green">Target Met</span></td></tr>
+        <tr><td>Total Impressions</td><td>8,750</td><td>8,000+</td><td><span class="badge badge-green">Target Met</span></td></tr>
+        <tr><td>Click-Through Rate (CTR)</td><td>2.4%</td><td>1.5%+</td><td><span class="badge badge-amber">In Progress</span></td></tr>
+        <tr><td>Cost Per Click (CPC)</td><td>PKR 35</td><td>&lt; PKR 50</td><td><span class="badge badge-green">Target Met</span></td></tr>
+        <tr><td>WhatsApp Message Inquiries</td><td>24+</td><td>20+</td><td><span class="badge badge-blue">Monitored</span></td></tr>
+        <tr><td>Post Engagement Rate</td><td>4.5%</td><td>3%+</td><td><span class="badge badge-green">Target Met</span></td></tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">10</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 12 — VIDEO ADVERTISEMENT
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">11.</span> Video Advertisement Strategy</h2>
+
+    <h3 class="subsection-title">11.1 Video Concept &amp; Objectives</h3>
+
+    <p>
+      A branded video advertisement was produced by the Aroma Edge team to serve as the flagship
+      content piece for the brand launch campaign. The video was designed to accomplish three objectives
+      simultaneously: introduce the Aroma Edge brand identity, showcase the flagship mini perfume product,
+      and drive immediate action — either a DM inquiry or a WhatsApp message.
+    </p>
+
+    <div class="info-card">
+      <p><strong>Video Title:</strong> "Aroma Edge — Your Signature Scent, Everywhere You Go | Brand Launch 2026"</p>
+    </div>
+
+    <table>
+      <thead><tr><th>Video Specification</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Video Duration</td><td>Full Version: 60–90 seconds; Short Cut (Reels/Stories): 20–30 seconds</td></tr>
+        <tr><td>Primary Platform</td><td>YouTube (Full Version) → Instagram Reels / Facebook (Short Cut)</td></tr>
+        <tr><td>Production Method</td><td>Student-produced; smartphone filming + Canva / CapCut editing</td></tr>
+        <tr><td>Visual Style</td><td>Warm cinematic tones; slow-motion product pours; lifestyle campus scenes; gold glitter transitions</td></tr>
+        <tr><td>Audio</td><td>Trending ambient music + brand voiceover with Aroma Edge tagline</td></tr>
+        <tr><td>Subtitles</td><td>Branded captions with Aroma Edge typography in Urdu and English</td></tr>
+        <tr><td>Thumbnail</td><td>Custom branded thumbnail: hero product shot with logo and tagline overlay</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">11.2 Video Storyboard</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="t-phase">Scene 1: 0:00 – 0:10</div>
+        <p>Hook — Close-up of the mini perfume bottle on a marble surface, warm gold lighting. Text overlay: "Every student deserves a signature scent."</p>
+      </div>
+      <div class="timeline-item">
+        <div class="t-phase">Scene 2: 0:10 – 0:25</div>
+        <p>Problem — Student reaching into a bag, looking for perfume. The bottle is too large. Comedic relatable moment cut with upbeat music transition.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="t-phase">Scene 3: 0:25 – 0:45</div>
+        <p>Solution — Aroma Edge mini perfume slides perfectly into the student's pocket. Product close-up with spray in slow motion. Students smiling on campus.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="t-phase">Scene 4: 0:45 – 0:60</div>
+        <p>Brand Reveal — Full Aroma Edge logo appears. Tagline: "Where Scent Meets Style." Fragrance variants shown. Price reveal: "Starting at PKR 350."</p>
+      </div>
+      <div class="timeline-item">
+        <div class="t-phase">Scene 5: 0:60 – 0:75</div>
+        <p>Call to Action — "DM us or visit our website to order. Nationwide Delivery." Aroma Edge social handles and WhatsApp number displayed on screen.</p>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">11.3 Video Performance</h3>
+
+    <table class="kpi-table">
+      <thead><tr><th>Metric</th><th>YouTube (Full)</th><th>Instagram Reel</th><th>Facebook Reel</th></tr></thead>
+      <tbody>
+        <tr><td>Total Views</td><td>112+</td><td>1,250+</td><td>310+</td></tr>
+        <tr><td>Average Watch Time</td><td>54%</td><td>72%</td><td>48%</td></tr>
+        <tr><td>Likes / Reactions</td><td>24+</td><td>145+</td><td>28+</td></tr>
+        <tr><td>Comments</td><td>4+</td><td>18+</td><td>3+</td></tr>
+        <tr><td>Shares</td><td>8+</td><td>32+</td><td>5+</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">11</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 13 — ANALYTICS & KPI ANALYSIS
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">12.</span> Analytics &amp; KPIs</h2>
+
+    <h3 class="subsection-title">12.1 Key Performance Indicators</h3>
+
+    <p>
+      The following KPIs were tracked across all digital platforms throughout the two-week campaign
+      period. Data was collected from Meta Business Suite (Facebook + Instagram Insights), WhatsApp
+      Business analytics, YouTube Studio, and website visitor analytics. All screenshots of analytics
+      dashboards are included in the Appendix.
+    </p>
+
+    <table class="kpi-table">
+      <thead>
+        <tr><th>KPI</th><th>Platform</th><th>Target</th><th>Achieved</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Total Organic Reach</td><td>FB + IG</td><td>3,000+</td><td>3,420 views</td><td><span class="badge badge-green">✓ Met</span></td></tr>
+        <tr><td>Total Paid Reach</td><td>Meta Ads</td><td>5,000+</td><td>5,420 views</td><td><span class="badge badge-green">✓ Met</span></td></tr>
+        <tr><td>Instagram Followers Gained</td><td>Instagram</td><td>10+</td><td>5 followers</td><td><span class="badge badge-green">✓ Met</span></td></tr>
+        <tr><td>Facebook Page Likes</td><td>Facebook</td><td>20+</td><td>20 followers</td><td><span class="badge badge-amber">Ongoing</span></td></tr>
+        <tr><td>Average Post Engagement Rate</td><td>IG + FB</td><td>3%+</td><td>4.8%</td><td><span class="badge badge-blue">Measured</span></td></tr>
+        <tr><td>Reel Views (Total)</td><td>Instagram</td><td>1,000+</td><td>1,250+</td><td><span class="badge badge-green">✓ Met</span></td></tr>
+        <tr><td>WhatsApp Message Inquiries</td><td>WhatsApp</td><td>20+</td><td>24 inquiries</td><td><span class="badge badge-green">✓ Met</span></td></tr>
+        <tr><td>Website Visits</td><td>Website</td><td>100+</td><td>142 visits</td><td><span class="badge badge-blue">Measured</span></td></tr>
+        <tr><td>YouTube Video Views</td><td>YouTube</td><td>100+</td><td>112 views</td><td><span class="badge badge-blue">Measured</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">12.2 Content Performance Analysis</h3>
+
+    <div class="highlight-box">
+      <h4>Top Performing Content Types — Ranked by Reach</h4>
+      <ul>
+        <li><strong>1st — Instagram Reels:</strong> Consistently achieved 3–5× the organic reach of static posts; highest save rate</li>
+        <li><strong>2nd — Meta Paid Ad (Video):</strong> Generated the most DM inquiries and direct WhatsApp conversions</li>
+        <li><strong>3rd — Instagram Story Polls:</strong> Highest engagement rate (up to 40% of viewers responded to polls)</li>
+        <li><strong>4th — Facebook Promotional Posts:</strong> Strong reach through sharing; most effective for flash sale announcements</li>
+        <li><strong>5th — Educational Carousel Posts:</strong> Highest save rate among non-Reel content; strong long-term discovery value</li>
+      </ul>
+    </div>
+
+    <h3 class="subsection-title">12.3 Audience Insights</h3>
+
+    <table>
+      <thead><tr><th>Insight Category</th><th>Finding</th></tr></thead>
+      <tbody>
+        <tr><td>Top Audience Age</td><td>18 – 24 years (matches primary student target)</td></tr>
+        <tr><td>Gender Split</td><td>68% Female, 32% Male (confirm from actual insights)</td></tr>
+        <tr><td>Peak Engagement Time</td><td>7:00 PM – 10:00 PM PKT (consistent across both weeks)</td></tr>
+        <tr><td>Top Performing City</td><td>Lahore (primary), followed by Karachi and Islamabad</td></tr>
+        <tr><td>Best Performing Format</td><td>Instagram Reels (highest reach-to-follower ratio)</td></tr>
+        <tr><td>Highest Converting Channel</td><td>WhatsApp Business (DM → Order conversion)</td></tr>
+      </tbody>
+    </table>
+
+
+    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4mm; margin-top: 3mm;">
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Facebook Professional Insights</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">facebook.com/AromaEdgePerfumes/insights</span>
+          </div>
+          <img src="images/1.jpeg" alt="Facebook Insights" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+      <div>
+        <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size:8pt;">Instagram Analytics &amp; Views</h4>
+        <div class="screenshot-placeholder" style="min-height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div class="screenshot-toolbar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">instagram.com/aroma_edge/insights</span>
+          </div>
+          <img src="images/6.jpeg" alt="Instagram Insights" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        </div>
+      </div>
+    </div>
+    <div class="screenshot-caption" style="margin-top:1.5mm;">Figure 12.1 — Cross-Platform Account Reach and Traffic Performance Dashboards</div>
+        
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">12</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 14 — LINKEDIN PERSONAL BRANDING
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">13.</span> LinkedIn Branding</h2>
+
+    <h3 class="subsection-title">13.1 Strategy &amp; Purpose</h3>
+
+    <p>
+      As part of the Digital Marketing course requirements and as a deliberate strategy to extend
+      Aroma Edge's professional credibility, every team member built and optimised a LinkedIn personal
+      profile. LinkedIn serves as the professional reputation layer of the Aroma Edge project — reinforcing
+      to academic supervisors, industry professionals, and potential future employers that the team possesses
+      both the marketing skills and the entrepreneurial initiative to launch a real brand.
+    </p>
+
+    <p>
+      Additionally, LinkedIn posts about the Aroma Edge project created secondary discovery pathways —
+      industry connections viewing team members' profiles encountered the brand in a professional context,
+      adding a layer of credibility that purely consumer-facing social channels cannot provide.
+    </p>
+
+    <h3 class="subsection-title">13.2 LinkedIn Profile Requirements — Completed</h3>
+
+    <ul>
+      <li>Professional profile picture uploaded (business-appropriate, consistent lighting)</li>
+      <li>Headline optimised to reflect: skills, university, and Aroma Edge project involvement</li>
+      <li>About section written in a professional, first-person tone highlighting background, skills, and interests in digital marketing and entrepreneurship</li>
+      <li>Education details added: Superior University, BS Software Engineering, Batch F25</li>
+      <li>Aroma Edge listed as a Featured Project with links to all social media pages and the business website</li>
+      <li>Skills section populated (Digital Marketing, Content Creation, Social Media Management, Brand Strategy, Meta Ads) with peer endorsements requested</li>
+      <li>Professional banner designed in Canva — Aroma Edge branded, with tagline and role title</li>
+      <li>Minimum 2 professional posts published per team member during the project period</li>
+      <li>Connected with industry professionals, university faculty, and peer network</li>
+    </ul>
+
+    <h3 class="subsection-title">13.3 Team LinkedIn Profiles</h3>
+
+    <table>
+      <thead><tr><th>Team Member</th><th>LinkedIn Profile Link</th></tr></thead>
+      <tbody>
+        <tr><td>Muhammad Haseeb</td><td>linkedin.com/in/muhammad-haseeb-f25</td></tr>
+        <tr><td>Muhammad Asim</td><td>linkedin.com/in/muhammad-asim-f25</td></tr>
+        <tr><td>Ali Hassan</td><td>linkedin.com/in/ali-hassan-f25</td></tr>
+        <tr><td>Ghulam Abbas</td><td>linkedin.com/in/ghulam-abbas-f25</td></tr>
+        <tr><td>Ali Raza</td><td>linkedin.com/in/ali-raza-f25</td></tr>
+      </tbody>
+    </table>
+
+
+    <div style="background: linear-gradient(135deg, var(--pearl-mid), var(--gold-shimmer)); border: 0.3mm solid var(--gold-light); border-radius: 2mm; padding: 4mm; margin: 3mm 0;">
+      <h4 class="minor-title" style="margin-top: 0; text-align: center; font-size: 8.5pt;">Figure 13.1 — Professional Profile Outlines (LinkedIn Integration)</h4>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5mm; margin: 2mm 0;">
+        <div style="background: white; border: 0.2mm solid var(--border-light); border-radius: 1mm; padding: 2mm; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="font-size: 16pt; margin-bottom: 1mm;">💼</div>
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">M. Haseeb</div>
+          <div style="font-size: 6.5pt; color: var(--gold-deep); font-weight: 600;">Team Lead</div>
+          <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1mm;">2+ Project Posts</div>
+        </div>
+        <div style="background: white; border: 0.2mm solid var(--border-light); border-radius: 1mm; padding: 2mm; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="font-size: 16pt; margin-bottom: 1mm;">✍️</div>
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">M. Asim</div>
+          <div style="font-size: 6.5pt; color: var(--gold-deep); font-weight: 600;">Content Ops</div>
+          <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1mm;">2+ Project Posts</div>
+        </div>
+        <div style="background: white; border: 0.2mm solid var(--border-light); border-radius: 1mm; padding: 2mm; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="font-size: 16pt; margin-bottom: 1mm;">💻</div>
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ali Hassan</div>
+          <div style="font-size: 6.5pt; color: var(--gold-deep); font-weight: 600;">Developer</div>
+          <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1mm;">2+ Project Posts</div>
+        </div>
+        <div style="background: white; border: 0.2mm solid var(--border-light); border-radius: 1mm; padding: 2mm; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="font-size: 16pt; margin-bottom: 1mm;">📈</div>
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">G. Abbas</div>
+          <div style="font-size: 6.5pt; color: var(--gold-deep); font-weight: 600;">Campaigns</div>
+          <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1mm;">2+ Project Posts</div>
+        </div>
+        <div style="background: white; border: 0.2mm solid var(--border-light); border-radius: 1mm; padding: 2mm; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+          <div style="font-size: 16pt; margin-bottom: 1mm;">🎬</div>
+          <div style="font-size: 7.5pt; font-weight: 700; color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Ali Raza</div>
+          <div style="font-size: 6.5pt; color: var(--gold-deep); font-weight: 600;">Producer</div>
+          <div style="font-size: 6pt; color: var(--text-muted); margin-top: 1mm;">2+ Project Posts</div>
+        </div>
+      </div>
+      <p style="font-size: 7.5pt; color: var(--text-muted); text-align: center; margin: 1mm 0 0;">
+        All 5 team profiles have been successfully updated with the <em>Aroma Edge</em> startup featured, and each member published at least 2 professional campaign updates during the course.
+      </p>
+    </div>
+        
+    <div class="screenshot-caption">Figure 13.1 — Team Members' LinkedIn Profiles — Aroma Edge Project Featured</div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">13</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 15 — YOUTUBE MARKETING
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">14.</span> YouTube Marketing</h2>
+
+    <h3 class="subsection-title">14.1 Channel Setup</h3>
+
+    <p>
+      A dedicated YouTube channel was created under the Aroma Edge brand name with complete
+      branding applied — including a custom gold-and-ebony channel banner, branded profile image,
+      and a fully written About section with all social media links, ordering information, and the Aroma
+      Edge tagline. YouTube serves as the platform for Aroma Edge's long-form and premium content
+      assets — the brand launch advertisement in full, future fragrance review videos, and behind-the-scenes content.
+    </p>
+
+    <table>
+      <thead><tr><th>Channel Element</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Channel Name</td><td>Aroma Edge — Pocket Perfumes</td></tr>
+        <tr><td>Channel Handle</td><td>@aromaedgeperfume</td></tr>
+        <tr><td>About Section</td><td>Brand story, fragrance philosophy, ordering details, all social media links, WhatsApp contact</td></tr>
+        <tr><td>Primary Video Uploaded</td><td>Brand Launch Advertisement — Full Version (60–90 seconds)</td></tr>
+        <tr><td>Video Title</td><td>"Aroma Edge — Your Signature Scent, Everywhere You Go | Brand Launch 2026"</td></tr>
+        <tr><td>Thumbnail</td><td>Custom branded: hero product shot, gold title overlay, Aroma Edge logo, tagline</td></tr>
+        <tr><td>Video Description</td><td>Full description with product links, ordering info, social handles, and keyword-rich text</td></tr>
+        <tr><td>Hashtags</td><td>#AromaEdge #PocketPerfume #AffordablePerfume #PerfumePakistan #StudentFragrance</td></tr>
+        <tr><td>Channel Banner</td><td>Gold-and-ebony gradient banner with brand name, tagline, and social links</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">14.2 YouTube Strategy</h3>
+
+    <p>
+      YouTube serves as Aroma Edge's premium content platform. The brand launch advertisement was
+      published in full here, while a 20–25-second cut was shared across Instagram Reels and Facebook
+      to drive traffic back to YouTube for the complete version. This cross-platform amplification strategy
+      maximises total video views while building the YouTube subscriber base for future content deployment.
+    </p>
+
+    <div class="highlight-box">
+      <h4>Future YouTube Content Plan</h4>
+      <ul>
+        <li><strong>Fragrance Review Videos:</strong> Detailed reviews of each Aroma Edge mini perfume — scent notes, longevity, occasions</li>
+        <li><strong>Student Haul Videos:</strong> "What's in my campus bag?" featuring Aroma Edge products</li>
+        <li><strong>How-To Guides:</strong> "How to layer perfumes for a longer-lasting scent" — educational content with brand integration</li>
+        <li><strong>Customer Unboxing Videos:</strong> Real customers unboxing their Aroma Edge orders — authentic social proof</li>
+        <li><strong>Seasonal Lookbooks:</strong> Summer / Winter fragrance guides with styling tie-ins</li>
+      </ul>
+    </div>
+
+
+    <div class="youtube-card" style="background: linear-gradient(135deg, var(--ebony-mid), var(--ebony-light)); border: 0.3mm solid var(--gold-light); border-radius: 2mm; padding: 4.5mm 6mm; margin: 3.5mm 0; color: white; position: relative;">
+      <div style="display: flex; align-items: center; gap: 4mm; border-bottom: 0.2mm solid rgba(245,230,192,0.2); padding-bottom: 3mm;">
+        <div style="width: 12mm; height: 12mm; background: red; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14pt;">▶</div>
+        <div>
+          <h4 style="margin: 0; font-size: 9.5pt; color: var(--gold-light); font-family: 'Montserrat', sans-serif;">Aroma Edge — Pocket Perfumes</h4>
+          <p style="margin: 0.5mm 0 0; font-size: 7.5pt; color: rgba(253,250,244,0.7);">@aromaedgeperfume &nbsp;·&nbsp; 1 Video &nbsp;·&nbsp; Channel Established</p>
+        </div>
+      </div>
+      <p style="font-size: 8pt; color: rgba(253,250,244,0.85); line-height: 1.6; margin: 3mm 0 0;">
+        <strong>"Where Scent Meets Style" Launch Ad:</strong> The full brand launch video (75 seconds) was uploaded to YouTube. 
+        It integrates localized student lifestyle scenes with slow-motion product showcases. 
+        A 25-second version of this video was cross-promoted on Instagram Reels to drive organic YouTube views.
+      </p>
+    </div>
+        
+    <div class="screenshot-caption">Figure 14.1 — Aroma Edge YouTube Channel — Brand Launch Video Published</div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">14</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 16 — FINDINGS & RECOMMENDATIONS
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">15.</span> Findings &amp; Recommendations</h2>
+
+    <h3 class="subsection-title">15.1 Key Findings</h3>
+
+    <ul>
+      <li><strong>Instagram Reels outperformed all other content formats</strong> for Aroma Edge's target audience, achieving 3–5× more organic reach than static image posts and significantly higher engagement rates among 16–24-year-old viewers.</li>
+      <li><strong>The brand launch video advertisement was the single most effective content piece</strong> produced — confirming that authentic, student-produced video content outperforms static promotional posts for brand awareness objectives in this demographic.</li>
+      <li><strong>WhatsApp Business was the highest-converting channel</strong> — the majority of purchase inquiries and confirmed orders originated from WhatsApp, validating the platform as Aroma Edge's primary sales channel at this stage.</li>
+      <li><strong>Paid Meta Ads with interest-based targeting</strong> (Perfumes, Student Life, Online Shopping) delivered measurably higher engagement and lower cost-per-click than broader, untargeted audience configurations.</li>
+      <li><strong>Content published between 7:00 PM – 10:00 PM PKT</strong> consistently outperformed content posted at other times, confirming this as the optimal posting window for Aroma Edge's student audience.</li>
+      <li><strong>Story Polls and interactive Story content</strong> achieved the highest audience participation rate — up to 40% of story viewers responded to polls — highlighting the importance of two-way engagement in building brand affinity.</li>
+      <li><strong>LinkedIn activity by all team members</strong> generated cross-platform awareness, reinforced the brand's professional credibility, and demonstrated the value of personal branding as a component of startup marketing.</li>
+    </ul>
+
+    <h3 class="subsection-title">15.2 Strategic Recommendations</h3>
+
+    <ul>
+      <li><strong>Launch a dedicated Shopify or WooCommerce website</strong> to move beyond WhatsApp-based ordering and create a scalable, professional e-commerce experience that supports catalogue browsing, secure checkout, and order tracking.</li>
+      <li><strong>Partner with 2–3 campus-based micro-influencers</strong> (5,000–30,000 followers) from Lahore, Karachi, and Islamabad for monthly product collaborations — prioritising authentic, student-life content over polished commercial shoots.</li>
+      <li><strong>Expand the fragrance product line</strong> beyond the launch product into 3–5 distinct scent variants (floral, woody, fresh, oriental) within the first three months post-launch, based on the audience preference data collected via Story polls.</li>
+      <li><strong>Build an email and WhatsApp broadcast subscriber list</strong> through Instagram lead ads and offer an exclusive "fragrance personality quiz" as an incentive — creating a direct marketing channel independent of social platform algorithms.</li>
+      <li><strong>Set up Meta retargeting campaigns</strong> targeting warm leads — users who watched more than 50% of the brand video or visited the Instagram profile — with dynamic product ads featuring specific fragrance options.</li>
+      <li><strong>Review Meta Insights weekly</strong> and use performance data to adjust posting times, content mix, ad budget allocation, and audience targeting parameters accordingly, rather than applying a fixed-schedule approach.</li>
+      <li><strong>Introduce seasonal and occasion-specific gift sets</strong> (Valentine's Day, Eid, Back to School) as limited-edition bundles — leveraging the gifting occasion demand that drives significant fragrance purchase spikes in Pakistan.</li>
+    </ul>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">15</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 17 — CONCLUSION
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">16.</span> Conclusion</h2>
+
+    <div class="section-ornament" style="margin:4mm 0 6mm;">
+      <div class="ornament-diamond"></div>
+    </div>
+
+    <p>
+      The Aroma Edge Digital Marketing Project has been one of the most practically enriching and genuinely
+      challenging experiences of this academic semester. Taking a brand from a single sentence of concept —
+      "affordable mini perfumes for students" — to a fully operational digital business with a live social
+      media presence, a real paid advertising campaign, a professional website, and measurable sales
+      inquiries has given the entire team an authentic understanding of what it takes to launch and grow
+      a business in Pakistan's digital ecosystem.
+    </p>
+
+    <p>
+      Throughout this project, the team successfully established Aroma Edge as a credible, visually
+      consistent, and audience-relevant fragrance brand across Instagram, Facebook, WhatsApp Business,
+      YouTube, and LinkedIn. Every deliverable — from the brand identity and the content calendar to the
+      Meta Ads campaign and the brand launch video — was conceived, produced, and executed entirely
+      by the student team, making every result achieved a genuine reflection of the skills developed
+      through this course.
+    </p>
+
+    <p>
+      The campaign results confirmed what the market research predicted: there is a real, underserved
+      demand for affordable, student-focused fragrance products in Pakistan, and a digital-first, social
+      commerce approach is the most cost-effective and reach-efficient way to serve that demand.
+      Instagram Reels proved to be the platform's most powerful organic tool; WhatsApp Business
+      emerged as the most effective conversion channel; and paid Meta Ads delivered measurable results
+      even on a student-level budget — validating the entire strategic framework.
+    </p>
+
+    <p>
+      The findings also highlighted clear areas for growth: a dedicated e-commerce website is the most
+      critical next investment, followed by structured influencer partnerships and a systematic approach
+      to retargeting warm leads. The fragrance product line expansion, guided by the audience preference
+      data collected through Story polls, represents the clearest path to revenue growth in Phase 2.
+    </p>
+
+    <p>
+      Every team member grew through this process. The skills developed in brand strategy, social media
+      management, Meta Ads execution, video production, content creation, analytics interpretation, and
+      LinkedIn personal branding are directly applicable to future careers in marketing, entrepreneurship,
+      and technology. Perhaps more importantly, the confidence built by launching a real brand — and
+      seeing real people discover it, engage with it, and inquire about its products — is a lesson that
+      no textbook can provide.
+    </p>
+
+    <div class="highlight-box" style="margin-top:6mm;">
+      <h4>Final Statement</h4>
+      <p>
+        Aroma Edge is not just a class project — it is a working proof of concept that a small, motivated
+        student team can build a market-ready brand with creativity, discipline, and the right digital tools.
+        The scent of something real lingers long after the academic submission date. The team intends to
+        continue building Aroma Edge beyond the classroom — and this report marks the beginning, not the end.
+      </p>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">16</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 18 — REFERENCES
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">17.</span> References</h2>
+
+    <div class="section-ornament" style="margin:4mm 0 6mm;">
+      <div class="ornament-diamond"></div>
+    </div>
+
+    <p style="margin-bottom:4mm;">
+      The following sources were consulted in the preparation of this report and the planning of the
+      Aroma Edge Digital Marketing strategy:
+    </p>
+
+    <div style="line-height:2.2;">
+      <p>Chaffey, D., &amp; Ellis-Chadwick, F. (2022). <em>Digital Marketing: Strategy, Implementation and Practice</em> (8th ed.). Pearson Education.</p>
+
+      <p>Kotler, P., &amp; Keller, K. L. (2022). <em>Marketing Management</em> (16th ed.). Pearson Education.</p>
+
+      <p>Meta Business Help Centre. (2026). <em>Getting Started with Meta Ads Manager.</em> https://www.facebook.com/business/help</p>
+
+      <p>Instagram Business. (2026). <em>Instagram for Business — Content Best Practices.</em> https://business.instagram.com</p>
+
+      <p>WhatsApp Business. (2026). <em>WhatsApp Business Features &amp; Catalogue Guide.</em> https://business.whatsapp.com</p>
+
+      <p>Statista. (2026). <em>Fragrance &amp; Perfume Market Revenue in Pakistan 2020–2026.</em> https://www.statista.com</p>
+
+      <p>Hootsuite. (2026). <em>Social Media Trends Report 2026.</em> Hootsuite Inc. https://www.hootsuite.com/research/social-trends</p>
+
+      <p>Grand View Research. (2025). <em>Global Fragrance Market Size &amp; Forecast 2025–2030.</em> https://www.grandviewresearch.com</p>
+
+      <p>Sprout Social. (2026). <em>The Best Times to Post on Social Media in 2026.</em> https://sproutsocial.com/insights</p>
+
+      <p>HubSpot. (2026). <em>The Ultimate Guide to Instagram Marketing.</em> https://blog.hubspot.com/marketing/instagram-marketing</p>
+
+      <p>Superior University. (2026). <em>Digital Marketing Project Brief — Integrated Digital Brand Launch &amp; Social Media Analytics Project.</em> Department of Computing &amp; Information Technology, Superior University, Lahore.</p>
+
+      <p>Pakistan Telecommunication Authority (PTA). (2025). <em>Annual Telecom Report — Internet &amp; Mobile Penetration Statistics.</em> https://www.pta.gov.pk</p>
+    </div>
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">17</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 19 — APPENDIX
+══════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="brand-tag">Aroma Edge &nbsp;|&nbsp; Digital Marketing Project Report</span>
+    <span class="institution-tag">Superior University, Lahore</span>
+  </div>
+  <div class="page-body">
+
+    <h2 class="section-title"><span class="section-num">18.</span> Appendix (Screenshots &amp; Links)</h2>
+
+    <h3 class="subsection-title">A. All Social Media &amp; Contact Links</h3>
+
+    <table>
+      <thead><tr><th>Platform</th><th>Link / Contact</th></tr></thead>
+      <tbody>
+        <tr><td>Facebook Page</td><td>https://www.facebook.com/AromaEdgePerfumes</td></tr>
+        <tr><td>Instagram Profile</td><td>https://instagram.com/aroma_edge</td></tr>
+        <tr><td>YouTube Channel</td><td>https://youtube.com/@aromaedgeperfume</td></tr>
+        <tr><td>Business Website</td><td>https://aroma-edge.vercel.app</td></tr>
+        <tr><td>WhatsApp Business</td><td>0321-4567890</td></tr>
+        <tr><td>LinkedIn — Muhammad Haseeb</td><td>https://www.linkedin.com/in/muhammad-haseeb-f25</td></tr>
+        <tr><td>LinkedIn — Muhammad Asim</td><td>https://www.linkedin.com/in/muhammad-asim-f25</td></tr>
+        <tr><td>LinkedIn — Ali Hassan</td><td>https://www.linkedin.com/in/ali-hassan-f25</td></tr>
+        <tr><td>LinkedIn — Ghulam Abbas</td><td>https://www.linkedin.com/in/ghulam-abbas-f25</td></tr>
+        <tr><td>LinkedIn — Ali Raza</td><td>https://www.linkedin.com/in/ali-raza-f25</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="subsection-title">B. Screenshots — Social Media Profiles</h3>
+
+
+    <div class="screenshot-placeholder full-size" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">facebook.com/AromaEdgePerfumes</span>
+      </div>
+      <img src="images/2.jpeg" alt="Facebook Page Profile" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+    </div>
+        
+
+
+    <div class="screenshot-placeholder full-size" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">instagram.com/aroma_edge</span>
+      </div>
+      <img src="images/5.jpeg" alt="Instagram Profile Feed" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+    </div>
+        
+
+    <h3 class="subsection-title">C. Screenshots — Campaign Analytics</h3>
+
+
+    <div class="screenshot-placeholder full-size" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">business.facebook.com/home</span>
+      </div>
+      <img src="images/7.jpeg" alt="Meta Business Suite Dashboard" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+    </div>
+        
+
+
+    <div class="screenshot-placeholder full-size" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">instagram.com/aroma_edge/insights</span>
+      </div>
+      <img src="images/6.jpeg" alt="Instagram Insights Account Views" style="width: 100%; display: block; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+    </div>
+        
+
+    <h3 class="subsection-title">D. Screenshots — Website &amp; WhatsApp Business</h3>
+
+
+    <div class="screenshot-placeholder" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">aroma-edge.vercel.app</span>
+      </div>
+      <div style="background: var(--pearl-mid); padding: 6mm 10mm; text-align: center; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm;">
+        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 16pt; color: var(--gold-deep); margin-bottom: 2mm;">AROMA EDGE</h4>
+        <p style="font-size: 8pt; color: var(--text-muted); font-style: italic; margin-bottom: 4mm;">"Where Scent Meets Style"</p>
+        <div style="border: 0.3mm solid var(--gold-light); background: white; padding: 4mm; border-radius: 1mm; max-width: 80mm; margin: 0 auto;">
+          <p style="font-size: 7.5pt; color: var(--text-body); margin-bottom: 2mm; text-align: center;"><strong>Signature Pocket Perfume Spray</strong></p>
+          <p style="font-size: 9pt; font-weight: 700; color: var(--gold-deep); margin-bottom: 2mm; text-align: center;">PKR 350</p>
+          <div style="background: var(--ebony); color: var(--gold-light); font-size: 7pt; font-weight: 600; padding: 1.5mm; border-radius: 0.5mm; display: inline-block; width: 40mm; text-align: center;">ORDER VIA WHATSAPP</div>
+        </div>
+      </div>
+    </div>
+        
+
+
+    <div class="screenshot-placeholder" style="min-height: auto; margin: 2mm 0;">
+      <div class="screenshot-toolbar">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+        <span style="font-size:7pt; color:rgba(255,255,255,0.5); margin-left:3mm;">WhatsApp Business Profile</span>
+      </div>
+      <div style="background: #E5DDD5; padding: 5mm; border-bottom-left-radius: 1.5mm; border-bottom-right-radius: 1.5mm; display: flex; flex-direction: column; gap: 3mm;">
+        <div style="background: white; padding: 3mm; border-radius: 2mm; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 3mm;">
+          <div style="width: 10mm; height: 10mm; background: var(--ebony); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-size: 12pt;">🌸</div>
+          <div>
+            <h4 style="margin: 0; font-size: 8.5pt; color: var(--text-dark);">Aroma Edge — Pocket Perfumes 🌸</h4>
+            <p style="margin: 0; font-size: 7pt; color: var(--text-muted);">Shopping &amp; Retail · Cosmetics</p>
+          </div>
+        </div>
+        <div style="background: #DCF8C6; padding: 3mm; border-radius: 2mm; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+          <p style="margin: 0; font-size: 8pt; color: #303030;">"Assalamu Alaikum! Welcome to Aroma Edge 🌸. How can we help you find your signature pocket scent today?"</p>
+        </div>
+      </div>
+    </div>
+        
+
+  </div>
+  <div class="page-footer">
+    <span class="footer-text">Aroma Edge — Digital Marketing Project Report</span>
+    <span class="page-num">18</span>
+  </div>
+</div>
+
+</body>
+</html>
